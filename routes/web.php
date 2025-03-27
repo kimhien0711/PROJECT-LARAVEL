@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\SlideController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/',function(){
     return view ('/welcome');
@@ -40,3 +41,15 @@ Route::get('/export', [ExportController::class, 'export'])->name('export');
 
 Route::get('/admin/add-product', [PageController::class, 'showAddProductForm'])->name('add-product.form');
 Route::post('/admin/add-product', [PageController::class, 'postAdminAdd'])->name('add-product');
+
+Route::get('/register', function () {      
+    return view('users.register');      
+});   
+
+Route::post('/register', [UserController::class, 'Register']);
+    
+Route::get('/login', function () {      
+    return view('users.login');      
+});      
+
+Route::post('/login', [UserController::class, 'Login']);

@@ -51,9 +51,7 @@
           <form action="{{ route('admindelete', ['id' => $product->id]) }}" method="POST">
             @csrf
             <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
-        
-        
+        </form>       
         </td>
 
       </tr>
